@@ -17,13 +17,11 @@ Strona: **[jandabrowski2002.github.io/cellar](https://jandabrowski2002.github.io
 
 Każdy skan zaczyna od najtańszego sposobu i idzie wyżej tylko przy wątpliwościach:
 
-| # | Szczebel | Koszt / skan |
-|---|---|---|
-| 1 | Znany kod kreskowy → produkt z bazy | 0 ¢ |
-| 2 | OCR na telefonie (ML Kit) porównany z katalogiem i potwierdzonymi skanami (pg_trgm) | 0 ¢ |
-| 3 | Claude Haiku czyta sam tekst OCR (~20× mniej tokenów niż zdjęcie) | ułamek centa |
-| 4 | Claude Haiku czyta zdjęcie i weryfikuje kandydatów z bazy | ok. 0,05 ¢ |
-| 5 | Wyszukiwanie w internecie (tylko Premium) | ok. 1 ¢ |
+1. Znany kod kreskowy → produkt z bazy.
+2. OCR na telefonie (ML Kit) porównany z katalogiem i potwierdzonymi skanami (pg_trgm).
+3. Claude Haiku czyta sam tekst OCR (~20× mniej tokenów niż zdjęcie).
+4. Claude Haiku czyta zdjęcie i weryfikuje kandydatów z bazy.
+5. Wyszukiwanie w internecie (tylko Premium).
 
 ## Technologie
 
@@ -39,7 +37,7 @@ Każdy skan zaczyna od najtańszego sposobu i idzie wyżej tylko przy wątpliwo�
 ## Decyzje projektowe
 
 - **Spike przed budową** – najpierw test odczytu etykiet z progami go/no-go (trafność nazwy i producenta, kategorii, rocznika; mediana czasu; koszt skanu) na prawdziwych zdjęciach, porównanie modeli i poziomów wysiłku.
-- **Kontrola kosztów AI** – dzienny budżet całej aplikacji z bezpiecznikiem, limity na plan i użytkownika, rate limiting na minutę; odrzucone skany też liczą się do limitów.
+- **Kontrola kosztów AI** – limity na plan i użytkownika oraz ochrona przed nadużyciami.
 - **Pochodzenie danych** – każde pole produktu pamięta źródło (etykieta, wiedza modelu, internet, użytkownik). Wiedza modelu nigdy nie nadpisuje danych z etykiety, a zmianę istniejącej wartości musi potwierdzić kilku niezależnych użytkowników.
 - **Prywatność** – zdjęcia są zmniejszane i czyszczone z metadanych (GPS) na telefonie; zgoda RODO na reklamy przez Google UMP.
 

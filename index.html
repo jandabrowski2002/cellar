@@ -60,30 +60,24 @@ description: Cellar rozpoznaje butelkę po zdjęciu etykiety, opisuje jej smak i
 <section class="block" id="jak-dziala">
   <div class="wrap">
     <h2>Jak działa rozpoznawanie</h2>
-    <p class="sub">Każdy skan zaczyna od najtańszego sposobu i idzie szczebel wyżej tylko wtedy, gdy wynik nie jest pewny. Większość znanych butelek rozpoznaje się bez wywołania modelu AI.</p>
+    <p class="sub">Każdy skan zaczyna od najprostszego sposobu i idzie szczebel wyżej tylko wtedy, gdy wynik nie jest pewny. Większość znanych butelek rozpoznaje się bez wywołania modelu AI.</p>
     <ol class="ladder">
       <li>
         <div><h3>Kod kreskowy</h3><p>Znany kod → produkt prosto z bazy.</p></div>
-        <span class="cost free">0 ¢</span>
       </li>
       <li>
         <div><h3>Tekst etykiety z telefonu</h3><p>OCR na urządzeniu (Google ML Kit) porównany z katalogiem i wcześniej potwierdzonymi skanami (PostgreSQL, pg_trgm).</p></div>
-        <span class="cost free">0 ¢</span>
       </li>
       <li>
         <div><h3>Model czyta sam tekst</h3><p>Claude Haiku dostaje tylko odczytany tekst – około 20 razy mniej danych niż zdjęcie.</p></div>
-        <span class="cost low">ułamek centa</span>
       </li>
       <li>
         <div><h3>Model czyta zdjęcie</h3><p>Odczyt etykiety ze zdjęcia i porównanie z kandydatami z bazy.</p></div>
-        <span class="cost low">ok. 0,05 ¢</span>
       </li>
       <li>
         <div><h3>Wyszukiwanie w internecie</h3><p>Tylko gdy nic wcześniej nie dało pewnego wyniku (plan Premium).</p></div>
-        <span class="cost high">ok. 1 ¢</span>
       </li>
     </ol>
-    <p class="ladder-note">Koszty to szacunki na jeden skan, w USD.</p>
   </div>
 </section>
 
@@ -106,7 +100,7 @@ description: Cellar rozpoznaje butelkę po zdjęciu etykiety, opisuje jej smak i
       <div class="card">
         <ul>
           <li><strong>Test przed budową.</strong> Najpierw spike z progami go/no-go (trafność, czas odpowiedzi, koszt skanu) na prawdziwych zdjęciach butelek.</li>
-          <li><strong>Kontrola kosztów AI.</strong> Dzienny budżet całej aplikacji, limity na użytkownika i plan, limit zapytań na minutę.</li>
+          <li><strong>Kontrola kosztów AI.</strong> Limity na plan i użytkownika oraz ochrona przed nadużyciami.</li>
           <li><strong>Skąd jest każda wartość.</strong> Każde pole produktu pamięta źródło: etykieta, wiedza modelu, internet albo użytkownik. Zmianę istniejącej wartości musi potwierdzić kilku niezależnych użytkowników.</li>
           <li><strong>Prywatność.</strong> Zdjęcia są zmniejszane i czyszczone z lokalizacji GPS na telefonie przed wysyłką.</li>
         </ul>
