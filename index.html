@@ -1,0 +1,128 @@
+---
+layout: default
+description: Cellar rozpoznaje butelkę po zdjęciu etykiety, opisuje jej smak i zapisuje w Twojej piwniczce. Aplikacja na iOS i Androida.
+---
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Aplikacja na iOS i Androida · wkrótce</p>
+      <h1>Zrób zdjęcie etykiety. Cellar powie Ci, co pijesz.</h1>
+      <p class="lead">Cellar rozpoznaje wino, whisky czy piwo po zdjęciu etykiety albo kodzie kreskowym, opisuje jego barwę, zapach i smak, a potem zapisuje butelkę w Twojej piwniczce.</p>
+      <div class="badges">
+        <span class="badge"><strong>App Store</strong> wkrótce</span>
+        <span class="badge"><strong>Google Play</strong> wkrótce</span>
+        <span class="badge">Tylko dla osób 18+</span>
+      </div>
+    </div>
+    <div class="phone" aria-label="Przykładowy wynik skanu w aplikacji">
+      <div class="screen">
+        <div class="bar"></div>
+        <div class="label">Rozpoznano</div>
+        <div class="name">Talisker Skye</div>
+        <div class="meta">Talisker · Single Malt Scotch · 45,8% · 700 ml</div>
+        <div class="chips"><span class="chip">Szkocja</span><span class="chip">Isle of Skye</span><span class="chip">Whisky</span></div>
+        <div class="note">Łagodny, dymny aromat z nutami torfu, miodu i soli morskiej. W smaku wędzone akcenty z delikatną słodyczą i pieprzem.</div>
+        <span class="btn">Dodaj do „Mam”</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Twoja piwniczka w telefonie</h2>
+    <p class="sub">Wszystko, co masz, chcesz mieć albo już próbowałeś – w jednym miejscu, z ocenami i notatkami.</p>
+    <div class="grid">
+      <div class="card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></svg>
+        <h3>Skan etykiety lub kodu</h3>
+        <p>Zdjęcie przodu etykiety wystarczy. Tył butelki uzupełnia szczepy, rocznik i moc.</p>
+      </div>
+      <div class="card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3 4 6 6.5 6 10a6 6 0 0 1-12 0c0-3.5 3-6 6-10z"/></svg>
+        <h3>Profil smaku</h3>
+        <p>Trzy proste zdania o barwie, zapachu i smaku – bez sommelierskiego żargonu.</p>
+      </div>
+      <div class="card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg>
+        <h3>Mam, Chcę mieć, Degustowane</h3>
+        <p>Listy butelek z ilością, ceną, miejscem zakupu i oceną od 0 do 10 co pół punktu.</p>
+      </div>
+      <div class="card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 6 1.9 6 5"/></svg>
+        <h3>Wspólny katalog</h3>
+        <p>Każda potwierdzona butelka trafia do bazy, więc następny skan tej etykiety jest natychmiastowy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="jak-dziala">
+  <div class="wrap">
+    <h2>Jak działa rozpoznawanie</h2>
+    <p class="sub">Każdy skan zaczyna od najtańszego sposobu i idzie szczebel wyżej tylko wtedy, gdy wynik nie jest pewny. Większość znanych butelek rozpoznaje się bez wywołania modelu AI.</p>
+    <ol class="ladder">
+      <li>
+        <div><h3>Kod kreskowy</h3><p>Znany kod → produkt prosto z bazy.</p></div>
+        <span class="cost free">0 ¢</span>
+      </li>
+      <li>
+        <div><h3>Tekst etykiety z telefonu</h3><p>OCR na urządzeniu (Google ML Kit) porównany z katalogiem i wcześniej potwierdzonymi skanami (PostgreSQL, pg_trgm).</p></div>
+        <span class="cost free">0 ¢</span>
+      </li>
+      <li>
+        <div><h3>Model czyta sam tekst</h3><p>Claude Haiku dostaje tylko odczytany tekst – około 20 razy mniej danych niż zdjęcie.</p></div>
+        <span class="cost low">ułamek centa</span>
+      </li>
+      <li>
+        <div><h3>Model czyta zdjęcie</h3><p>Odczyt etykiety ze zdjęcia i porównanie z kandydatami z bazy.</p></div>
+        <span class="cost low">ok. 0,05 ¢</span>
+      </li>
+      <li>
+        <div><h3>Wyszukiwanie w internecie</h3><p>Tylko gdy nic wcześniej nie dało pewnego wyniku (plan Premium).</p></div>
+        <span class="cost high">ok. 1 ¢</span>
+      </li>
+    </ol>
+    <p class="ladder-note">Koszty to szacunki na jeden skan, w USD.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Pod maską</h2>
+    <p class="sub">Projekt od pomysłu do sklepów zbudowany w jednej osobie: aplikacja mobilna, serwer, baza danych i integracja z AI.</p>
+    <div class="stack">
+      <div class="card">
+        <dl>
+          <dt>Aplikacja</dt><dd>Flutter (Dart) – jedna baza kodu na iOS i Androida</dd>
+          <dt>Serwer</dt><dd>ASP.NET Core 8, minimal API, EF Core</dd>
+          <dt>Baza</dt><dd>PostgreSQL z pg_trgm do wyszukiwania rozmytego</dd>
+          <dt>AI</dt><dd>Claude Haiku (Anthropic API): ustrukturyzowane odpowiedzi JSON, wyszukiwanie w sieci</dd>
+          <dt>Na telefonie</dt><dd>Google ML Kit: OCR, kody kreskowe, wstępna ocena zdjęcia</dd>
+          <dt>Płatności</dt><dd>RevenueCat (App Store, Google Play), webhooki</dd>
+          <dt>Reklamy</dt><dd>AdMob z weryfikacją nagród po stronie serwera</dd>
+        </dl>
+      </div>
+      <div class="card">
+        <ul>
+          <li><strong>Test przed budową.</strong> Najpierw spike z progami go/no-go (trafność, czas odpowiedzi, koszt skanu) na prawdziwych zdjęciach butelek.</li>
+          <li><strong>Kontrola kosztów AI.</strong> Dzienny budżet całej aplikacji, limity na użytkownika i plan, limit zapytań na minutę.</li>
+          <li><strong>Skąd jest każda wartość.</strong> Każde pole produktu pamięta źródło: etykieta, wiedza modelu, internet albo użytkownik. Zmianę istniejącej wartości musi potwierdzić kilku niezależnych użytkowników.</li>
+          <li><strong>Prywatność.</strong> Zdjęcia są zmniejszane i czyszczone z lokalizacji GPS na telefonie przed wysyłką.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="card author">
+      <p><strong style="color: var(--champagne)">Jan Dąbrowski</strong> – autor aplikacji. Masz pytanie albo propozycję współpracy? Napisz.</p>
+      <div class="links">
+        <a class="button" href="mailto:jandabrowski77@gmail.com">jandabrowski77@gmail.com</a>
+        <a class="button" href="https://github.com/jandabrowski2002">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>

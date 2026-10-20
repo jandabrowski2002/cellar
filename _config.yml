@@ -1,0 +1,11 @@
+title: Cellar
+description: Aplikacja do katalogowania alkoholi – zeskanuj etykietę, a Cellar rozpozna butelkę.
+baseurl: /cellar
+url: https://jandabrowski2002.github.io
+lang: pl
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+exclude:
+  - README.md
