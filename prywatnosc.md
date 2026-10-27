@@ -18,8 +18,9 @@ Administrator przetwarza tylko dane potrzebne do działania Aplikacji. Podstawy 
 
 | Dane | Cel | Podstawa | Jak długo |
 | --- | --- | --- | --- |
-| Adres e-mail, hasło (zapisane jako skrót, nie jawnym tekstem) | Założenie Konta i logowanie | lit. b | Do usunięcia Konta |
+| Adres e-mail, hasło (przechowuje je wyłącznie Firebase Authentication, jako skrót, nie jawnym tekstem), identyfikator konta logowania | Założenie Konta, logowanie, potwierdzenie adresu e-mail, reset hasła | lit. b | Do usunięcia Konta |
 | Z konta Google: adres e-mail, identyfikator Google, imię i nazwisko, zdjęcie profilowe | Logowanie przez Google, nazwa i zdjęcie w profilu | lit. b | Do usunięcia Konta |
+| Z konta Apple: identyfikator Apple, adres e-mail (także ukryty adres przekierowujący Apple), imię i nazwisko, jeśli Użytkownik je udostępni | Logowanie przez Apple | lit. b | Do usunięcia Konta |
 | Nazwa wyświetlana, własne zdjęcie profilowe | Profil Użytkownika | lit. b | Do zmiany lub usunięcia Konta |
 | Piwniczka: butelki, statusy, ilość, oceny, notatki, cena, miejsce zakupu | Prowadzenie Piwniczki, zbiorcza ocena produktu w Katalogu | lit. b | Do usunięcia wpisu lub Konta |
 | Skany: zdjęcia etykiet, tekst etykiety odczytany na telefonie, kod kreskowy, wynik rozpoznania, data | Rozpoznanie butelki | lit. b | Historia Skanów do usunięcia Konta |
@@ -32,7 +33,7 @@ Administrator przetwarza tylko dane potrzebne do działania Aplikacji. Podstawy 
 | Adres IP | Ochrona przed nadużyciami (limit Skanów na minutę) | lit. f | Tylko w pamięci serwera, kilka minut; nie jest zapisywany w bazie |
 | Treść korespondencji e-mail | Odpowiedź na pytania, reklamacje, zgłoszenia | lit. b i f | Do załatwienia sprawy, potem do przedawnienia roszczeń |
 
-Podanie danych jest dobrowolne, ale bez adresu e-mail (lub konta Google) nie można założyć Konta. Administrator nie podejmuje wobec Użytkowników decyzji opartych wyłącznie na zautomatyzowanym przetwarzaniu, które wywoływałyby skutki prawne (art. 22 RODO).
+Podanie danych jest dobrowolne, ale bez adresu e-mail (lub konta Google albo Apple) nie można założyć Konta. Administrator nie podejmuje wobec Użytkowników decyzji opartych wyłącznie na zautomatyzowanym przetwarzaniu, które wywoływałyby skutki prawne (art. 22 RODO).
 
 ## §3. Skanowanie i sztuczna inteligencja
 
@@ -51,7 +52,9 @@ Administrator nie sprzedaje danych. Serwer Aplikacji należy do Administratora i
 | Apple Distribution International (iCloud) | Kopie zapasowe danych z §2 | Przechowywanie kopii zapasowych | Podmiot przetwarzający |
 | Anthropic, PBC (USA) | Zdjęcia i tekst etykiet | Rozpoznanie butelki (§3) | Podmiot przetwarzający |
 | RevenueCat, Inc. (USA) | Identyfikator Konta, dane zakupów Premium | Obsługa i weryfikacja subskrypcji | Podmiot przetwarzający |
+| Google Ireland Ltd (Firebase Authentication) | Adres e-mail, hasło (jako skrót), identyfikatory kont Google i Apple, adres IP i dane urządzenia przy logowaniu | Logowanie, wysyłka maili z potwierdzeniem adresu i resetem hasła | Podmiot przetwarzający |
 | Google Ireland Ltd | Dane logowania kontem Google | Logowanie przez Google | Odrębny administrator |
+| Apple Distribution International | Dane logowania kontem Apple | Logowanie przez Apple | Odrębny administrator |
 | Google Ireland Ltd (AdMob) | Identyfikator reklamowy, dane urządzenia, adres IP, interakcje z reklamami | Wyświetlanie reklam w Planie Free, potwierdzanie reklam z nagrodą (§6) | Odrębny administrator |
 | Google (Google Fonts, ML Kit) | Adres IP, anonimowe dane diagnostyczne | Pobranie czcionek Aplikacji, działanie odczytu etykiet na telefonie | Odrębny administrator |
 | Apple Distribution International, Google Commerce Ltd | Dane zakupu i płatności | Sprzedaż Premium w App Store i Google Play | Odrębny administrator |
@@ -77,7 +80,7 @@ Administrator nie widzi danych karty ani innej metody płatności – obsługuje
 ## §7. Dane na telefonie i uprawnienia
 
 1. Na telefonie Aplikacja zapisuje tylko:
-   1. tokeny logowania – w bezpiecznym magazynie systemu (Pęk kluczy na iPhonie, Keystore na Androidzie),
+   1. dane sesji logowania – zapisuje je biblioteka Firebase Authentication (na iPhonie w Pęku kluczy, na Androidzie w pamięci Aplikacji),
    2. adres serwera Aplikacji i proste ustawienia.
 2. Aplikacja nie używa plików cookies ani narzędzi analitycznych do śledzenia Użytkownika.
 3. Aplikacja prosi o uprawnienia tylko wtedy, gdy są potrzebne:
@@ -96,7 +99,7 @@ Administrator nie widzi danych karty ani innej metody płatności – obsługuje
    5. przeniesienia danych przetwarzanych na podstawie umowy lub zgody (art. 20),
    6. sprzeciwu wobec przetwarzania opartego na prawnie uzasadnionym interesie (art. 21),
    7. wycofania zgody w dowolnym momencie (art. 7 ust. 3).
-2. Konto razem z Piwniczką, ocenami, historią Skanów i zdjęciem profilowym można usunąć samodzielnie: Ustawienia → Usuń konto.
+2. Konto razem z Piwniczką, ocenami, historią Skanów, zdjęciem profilowym i kontem logowania w Firebase Authentication można usunąć samodzielnie: Ustawienia → Usuń konto.
 3. Zdjęcia etykiet i informacje w Katalogu zostają po usunięciu Konta bez powiązania z Użytkownikiem ([Regulamin](regulamin), §3 i §5). Jeśli zdjęcie zawiera dane osobowe (np. twarz lub dokument), na żądanie Administrator je usunie.
 4. Pozostałe żądania należy wysyłać na adres [jandabrowski77@gmail.com](mailto:jandabrowski77@gmail.com). Administrator odpowiada w ciągu miesiąca. W wyjątkowych przypadkach termin może zostać wydłużony o kolejne dwa miesiące, o czym Administrator informuje. Może poprosić o potwierdzenie tożsamości, np. wiadomością z adresu e-mail Konta.
 5. Użytkownik może złożyć skargę do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa, [uodo.gov.pl](https://uodo.gov.pl)), jeśli uważa, że jego dane są przetwarzane niezgodnie z prawem.
@@ -104,6 +107,6 @@ Administrator nie widzi danych karty ani innej metody płatności – obsługuje
 ## §9. Postanowienia końcowe
 
 1. Aplikacja jest przeznaczona wyłącznie dla osób pełnoletnich. Administrator nie zbiera świadomie danych osób poniżej 18 lat. Konto takiej osoby zostanie usunięte po zgłoszeniu.
-2. Administrator chroni dane m.in. przez szyfrowane połączenie (HTTPS) między Aplikacją a serwerem, przechowywanie haseł wyłącznie jako skrót kryptograficzny, ograniczony dostęp do serwera i regularne kopie zapasowe.
+2. Administrator chroni dane m.in. przez szyfrowane połączenie (HTTPS) między Aplikacją a serwerem, przechowywanie haseł wyłącznie jako skrót kryptograficzny w Firebase Authentication (serwer Aplikacji haseł nie zna), ograniczony dostęp do serwera i regularne kopie zapasowe.
 3. O zmianach polityki Administrator informuje w Aplikacji. O istotnych zmianach, np. nowym celu przetwarzania lub nowym odbiorcy danych, informuje z wyprzedzeniem.
 4. Polityka obowiązuje od 20 października 2026 r.

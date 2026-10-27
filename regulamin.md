@@ -28,18 +28,19 @@ description: Zasady korzystania z aplikacji mobilnej Cellar.
    1. telefon z iOS 15.5 lub nowszym albo z Androidem 8.0 lub nowszym,
    2. dostęp do internetu,
    3. dostęp do aparatu lub galerii zdjęć (do skanów),
-   4. adres e-mail albo konto Google.
+   4. adres e-mail albo konto Google lub Apple.
 4. Zakazane jest dostarczanie przez Użytkownika treści o charakterze bezprawnym (art. 8 ust. 3 pkt 2 ustawy o świadczeniu usług drogą elektroniczną).
 
 ## §3. Konto
 
-1. Konto można założyć za pomocą adresu e-mail i hasła albo przez logowanie kontem Google. Założenie i prowadzenie Konta jest bezpłatne.
-2. Z chwilą założenia Konta zostaje zawarta umowa o świadczenie usług drogą elektroniczną na czas nieokreślony.
-3. Użytkownik może mieć jedno Konto. Nie udostępnia go innym osobom i dba o poufność hasła.
-4. Użytkownik może ustawić nazwę wyświetlaną i zdjęcie profilowe (własne albo z konta Google).
-5. Użytkownik może w każdej chwili usunąć Konto w Aplikacji (Ustawienia → Usuń konto). Usunięcie Konta rozwiązuje umowę i kasuje Piwniczkę, oceny, historię Skanów i zdjęcie profilowe. Zdjęcia etykiet przesłane w Skanach oraz informacje dodane do Katalogu (np. nazwa, rocznik, moc) nie są usuwane – zostają na serwerze bez powiązania z Kontem (§5).
-6. Usunięcie Konta nie anuluje subskrypcji Premium – trzeba ją anulować w App Store lub Google Play (§6).
-7. Usługodawca może zablokować lub usunąć Konto, jeśli Użytkownik poważnie albo uporczywie narusza Regulamin, w szczególności §2 ust. 4 lub §5 ust. 4. Przed tym, jeśli to możliwe, wzywa Użytkownika e-mailem do zaprzestania naruszeń i podaje przyczynę decyzji.
+1. Konto można założyć za pomocą adresu e-mail i hasła albo przez logowanie kontem Google lub Apple (na iPhonie). Założenie i prowadzenie Konta jest bezpłatne. Logowanie obsługuje usługa Firebase Authentication (Google).
+2. Przy rejestracji adresem e-mail Użytkownik potwierdza adres, klikając link w wiadomości. Do tego czasu korzystanie z Aplikacji nie jest możliwe. Zapomniane hasło można zmienić przez link „Nie pamiętam hasła” na ekranie logowania.
+3. Z chwilą założenia Konta zostaje zawarta umowa o świadczenie usług drogą elektroniczną na czas nieokreślony.
+4. Użytkownik może mieć jedno Konto. Nie udostępnia go innym osobom i dba o poufność hasła.
+5. Użytkownik może ustawić nazwę wyświetlaną i zdjęcie profilowe (własne albo z konta Google).
+6. Użytkownik może w każdej chwili usunąć Konto w Aplikacji (Ustawienia → Usuń konto). Usunięcie Konta rozwiązuje umowę i kasuje Piwniczkę, oceny, historię Skanów, zdjęcie profilowe oraz konto logowania w Firebase Authentication. Zdjęcia etykiet przesłane w Skanach oraz informacje dodane do Katalogu (np. nazwa, rocznik, moc) nie są usuwane – zostają na serwerze bez powiązania z Kontem (§5).
+7. Usunięcie Konta nie anuluje subskrypcji Premium – trzeba ją anulować w App Store lub Google Play (§6).
+8. Usługodawca może zablokować lub usunąć Konto, jeśli Użytkownik poważnie albo uporczywie narusza Regulamin, w szczególności §2 ust. 4 lub §5 ust. 4. Przed tym, jeśli to możliwe, wzywa Użytkownika e-mailem do zaprzestania naruszeń i podaje przyczynę decyzji.
 
 ## §4. Skanowanie etykiet
 
@@ -92,7 +93,7 @@ description: Zasady korzystania z aplikacji mobilnej Cellar.
 3. Usługodawca nie odpowiada za:
    1. decyzje Użytkownika podjęte na podstawie wyników Skanu lub informacji z Katalogu, w tym dotyczące zakupu lub spożycia alkoholu,
    2. treści dodane przez innych Użytkowników, o ile po otrzymaniu wiarygodnej wiadomości o ich bezprawnym charakterze niezwłocznie uniemożliwi do nich dostęp,
-   3. działanie App Store, Google Play, logowania Google i sieci internetowej Użytkownika.
+   3. działanie App Store, Google Play, logowania przez Google, Apple i Firebase Authentication oraz sieci internetowej Użytkownika.
 4. Postanowienia tego paragrafu nie ograniczają praw konsumenta wynikających z przepisów bezwzględnie obowiązujących, w szczególności odpowiedzialności za zgodność usługi cyfrowej z umową.
 
 ## §9. Reklamacje i prawa konsumenta
