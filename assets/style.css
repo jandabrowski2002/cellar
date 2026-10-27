@@ -40,7 +40,7 @@ img { max-width: 100%; }
 }
 .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; }
 .brand { display: flex; align-items: center; gap: 10px; color: var(--champagne); text-decoration: none; font: 600 20px var(--serif); }
-.brand svg { flex: none; }
+.brand img { flex: none; border-radius: 22.5%; }
 .top nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 15px; }
 .top nav a { color: var(--champagne-muted); text-decoration: none; }
 .top nav a:hover, .top nav a[aria-current] { color: var(--champagne); }
