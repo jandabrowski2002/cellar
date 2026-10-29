@@ -3,6 +3,7 @@ layout: doc
 title: Polityka prywatności aplikacji Cellar
 effective: 20 października 2026 r.
 description: Jakie dane zbiera aplikacja Cellar, po co i jak długo je przechowuje.
+alt: /en/privacy
 ---
 
 ## §1. Administrator danych
@@ -81,7 +82,7 @@ Administrator nie widzi danych karty ani innej metody płatności – obsługuje
 
 1. Na telefonie Aplikacja zapisuje tylko:
    1. dane sesji logowania – zapisuje je biblioteka Firebase Authentication (na iPhonie w Pęku kluczy, na Androidzie w pamięci Aplikacji),
-   2. adres serwera Aplikacji i proste ustawienia.
+   2. adres serwera Aplikacji i proste ustawienia, np. język.
 2. Aplikacja nie używa plików cookies ani narzędzi analitycznych do śledzenia Użytkownika.
 3. Aplikacja prosi o uprawnienia tylko wtedy, gdy są potrzebne:
    1. **aparat** – zdjęcia etykiet, kody kreskowe, zdjęcie profilowe,

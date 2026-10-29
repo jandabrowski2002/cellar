@@ -3,6 +3,7 @@ layout: doc
 title: Regulamin aplikacji Cellar
 effective: 20 października 2026 r.
 description: Zasady korzystania z aplikacji mobilnej Cellar.
+alt: /en/terms
 ---
 
 ## §1. Postanowienia ogólne

@@ -1,5 +1,7 @@
 <!doctype html>
-<html lang="pl">
+{%- assign en = false -%}
+{%- if page.lang == 'en' -%}{%- assign en = true -%}{%- endif %}
+<html lang="{% if en %}en{% else %}pl{% endif %}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,6 +11,9 @@
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
   <link rel="icon" href="{{ '/assets/icon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="apple-touch-icon" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
+  {%- if page.alt %}
+  <link rel="alternate" hreflang="{% if en %}pl{% else %}en{% endif %}" href="{{ page.alt | absolute_url }}">
+  {%- endif %}
 </head>
 <body>
   <header class="top">
@@ -17,11 +22,18 @@
         <img src="{{ '/assets/icon.svg' | relative_url }}" width="32" height="32" alt="">
         Cellar
       </a>
+      {%- if en %}
+      <nav aria-label="Menu">
+        <a href="{{ '/en/terms' | relative_url }}"{% if page.url == '/en/terms.html' %} aria-current="page"{% endif %}>Terms</a>
+        <a href="{{ '/en/privacy' | relative_url }}"{% if page.url == '/en/privacy.html' %} aria-current="page"{% endif %}>Privacy</a>
+      </nav>
+      {%- else %}
       <nav aria-label="Menu">
         <a href="{{ '/' | relative_url }}#jak-dziala">Jak działa</a>
         <a href="{{ '/regulamin' | relative_url }}"{% if page.url == '/regulamin.html' %} aria-current="page"{% endif %}>Regulamin</a>
         <a href="{{ '/prywatnosc' | relative_url }}"{% if page.url == '/prywatnosc.html' %} aria-current="page"{% endif %}>Prywatność</a>
       </nav>
+      {%- endif %}
     </div>
   </header>
 
@@ -31,12 +43,22 @@
 
   <footer class="foot">
     <div class="wrap">
+      {%- if en %}
+      <span>© 2026 Jan Dąbrowski · Alcohol harms your health – an app for adults only.</span>
+      <nav aria-label="Documents">
+        <a href="{{ '/en/terms' | relative_url }}">Terms of Service</a>
+        <a href="{{ '/en/privacy' | relative_url }}">Privacy Policy</a>
+        <a href="mailto:jandabrowski77@gmail.com">Contact</a>
+      </nav>
+      {%- else %}
       <span>© 2026 Jan Dąbrowski · Alkohol szkodzi zdrowiu – aplikacja dla osób pełnoletnich.</span>
       <nav aria-label="Dokumenty">
         <a href="{{ '/regulamin' | relative_url }}">Regulamin</a>
         <a href="{{ '/prywatnosc' | relative_url }}">Polityka prywatności</a>
+        <a href="{{ '/en/terms' | relative_url }}" hreflang="en">English</a>
         <a href="mailto:jandabrowski77@gmail.com">Kontakt</a>
       </nav>
+      {%- endif %}
     </div>
   </footer>
 </body>
