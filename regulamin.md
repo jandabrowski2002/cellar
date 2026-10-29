@@ -66,10 +66,10 @@ description: Zasady korzystania z aplikacji mobilnej Cellar.
 
    | | Plan Free | Plan Premium |
    | --- | --- | --- |
-   | Skany dziennie | 20 (+10 za każdą obejrzaną reklamę z nagrodą, maks. 3 dziennie) | 100 |
+   | Skany dziennie | 10 (+2 za każdą obejrzaną reklamę z nagrodą, maks. 3 reklamy dziennie) | 100 |
    | Wyszukiwanie butelki w internecie | brak | do 10 dziennie |
-   | Lista „Mam” | do 20 pozycji | bez limitu |
-   | Lista „Chcę mieć” | do 30 pozycji | bez limitu |
+   | Lista „Mam” | do 15 pozycji | bez limitu |
+   | Lista „Chcę mieć” | do 25 pozycji | bez limitu |
    | Reklamy | tak (§7) | nie |
    | Cena | bezpłatnie | 14,99 zł miesięcznie lub 99 zł rocznie |
 
@@ -81,8 +81,8 @@ description: Zasady korzystania z aplikacji mobilnej Cellar.
 
 ## §7. Reklamy
 
-1. W Planie Free Aplikacja wyświetla reklamy dostarczane przez Google AdMob. Reklama pełnoekranowa pojawia się nie częściej niż co 5 Skanów.
-2. Po wyczerpaniu dziennego limitu Użytkownik może dobrowolnie obejrzeć reklamę z nagrodą i otrzymać 10 dodatkowych Skanów na dany dzień, maksymalnie 3 razy dziennie. Nagroda jest przyznawana po potwierdzeniu obejrzenia reklamy przez Google. Dodatkowe Skany nie przechodzą na kolejny dzień i nie mają wartości pieniężnej.
+1. W Planie Free Aplikacja wyświetla reklamy dostarczane przez Google AdMob. Reklama pełnoekranowa pojawia się nie częściej niż co 3 Skany.
+2. Po wyczerpaniu dziennego limitu Użytkownik może dobrowolnie obejrzeć reklamę z nagrodą i otrzymać 2 dodatkowe Skany na dany dzień, maksymalnie 3 razy dziennie. Nagroda jest przyznawana po potwierdzeniu obejrzenia reklamy przez Google. Dodatkowe Skany nie przechodzą na kolejny dzień i nie mają wartości pieniężnej.
 3. Przed pierwszą reklamą Aplikacja pyta o zgodę na reklamy spersonalizowane. Użytkownik może jej odmówić – wtedy widzi reklamy niespersonalizowane.
 4. Usługodawca nie odpowiada za treść reklam osób trzecich.
 
