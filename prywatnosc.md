@@ -46,11 +46,11 @@ Podanie danych jest dobrowolne, ale bez adresu e-mail (lub konta Google albo App
 
 ## §4. Komu przekazujemy dane
 
-Administrator nie sprzedaje danych. Serwer Aplikacji należy do Administratora i jest przez niego obsługiwany. Dane przekazuje tylko firmom, bez których Aplikacja nie mogłaby działać:
+Administrator nie sprzedaje danych. Serwer Aplikacji to serwer wirtualny wynajmowany od OVHcloud w centrum danych w Niemczech, zarządzany wyłącznie przez Administratora. Dane przekazuje tylko firmom, bez których Aplikacja nie mogłaby działać:
 
 | Odbiorca | Jakie dane | Po co | Rola |
 | --- | --- | --- | --- |
-| Apple Distribution International (iCloud) | Kopie zapasowe danych z §2 | Przechowywanie kopii zapasowych | Podmiot przetwarzający |
+| OVH Sp. z o.o. (OVHcloud), centrum danych w Niemczech | Wszystkie dane z §2 przechowywane na serwerze, w tym zdjęcia etykiet i kopie zapasowe | Hosting serwera Aplikacji i kopii zapasowych | Podmiot przetwarzający |
 | Anthropic, PBC (USA) | Zdjęcia i tekst etykiet | Rozpoznanie butelki (§3) | Podmiot przetwarzający |
 | RevenueCat, Inc. (USA) | Identyfikator Konta, dane zakupów Premium | Obsługa i weryfikacja subskrypcji | Podmiot przetwarzający |
 | Google Ireland Ltd (Firebase Authentication) | Adres e-mail, hasło (jako skrót), identyfikatory kont Google i Apple, adres IP i dane urządzenia przy logowaniu | Logowanie, wysyłka maili z potwierdzeniem adresu i resetem hasła | Podmiot przetwarzający |

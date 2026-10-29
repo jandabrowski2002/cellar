@@ -48,11 +48,11 @@ Providing data is voluntary, but an Account cannot be created without an e-mail 
 
 ## §4. Who we share data with
 
-The Controller does not sell data. The App's server belongs to and is operated by the Controller. Data is shared only with companies without which the App could not work:
+The Controller does not sell data. The App's server is a virtual server rented from OVHcloud in a data centre in Germany and managed solely by the Controller. Data is shared only with companies without which the App could not work:
 
 | Recipient | Data | Purpose | Role |
 | --- | --- | --- | --- |
-| Apple Distribution International (iCloud) | Backups of the data in §2 | Storing backups | Processor |
+| OVH Sp. z o.o. (OVHcloud), data centre in Germany | All data in §2 stored on the server, including label photos and backups | Hosting the App's server and backups | Processor |
 | Anthropic, PBC (USA) | Label photos and text | Identifying the bottle (§3) | Processor |
 | RevenueCat, Inc. (USA) | Account identifier, Premium purchase data | Handling and verifying subscriptions | Processor |
 | Google Ireland Ltd (Firebase Authentication) | E-mail address, password (as a hash), Google and Apple account identifiers, IP address and device data at sign-in | Sign-in, sending address confirmation and password reset e-mails | Processor |
