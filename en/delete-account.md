@@ -28,3 +28,13 @@ Deleting the account does not cancel a Premium subscription – cancel it in the
 - **Billing records of Premium purchases** – 5 years from the end of the tax year, for tax obligations.
 
 Details: [Privacy Policy](privacy).
+
+## Deleting some of your data (without deleting the account)
+
+**In the app:**
+
+- a bottle in your cellar with its rating and note: open the bottle and choose **Delete**,
+- profile photo and display name: change or remove them in your profile.
+
+**By e-mail:** to delete other data, e.g. scan history or a specific label photo, write from your account's address to [jandabrowski77@gmail.com](mailto:jandabrowski77@gmail.com) with the subject “Data deletion”. We will reply within one month. Catalog information is not linked to your cellar and stays without your details, and billing records of Premium purchases are kept for 5 years from the end of the tax year.
+

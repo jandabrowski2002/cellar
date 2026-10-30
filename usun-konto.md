@@ -27,3 +27,13 @@ Usunięcie konta nie anuluje subskrypcji Premium – anuluj ją w App Store lub 
 - **Dane rozliczeniowe zakupów Premium** – 5 lat od końca roku podatkowego, ze względu na obowiązki podatkowe.
 
 Szczegóły: [Polityka prywatności](prywatnosc).
+
+## Usuwanie części danych (bez usuwania konta)
+
+**W aplikacji:**
+
+- butelka z piwniczki wraz z oceną i notatką: otwórz butelkę i wybierz **Usuń**,
+- zdjęcie profilowe i nazwa wyświetlana: zmień je lub usuń w profilu.
+
+**Mailem:** o usunięcie innych danych, np. historii skanów albo konkretnego zdjęcia etykiety, poproś z adresu e-mail konta na [jandabrowski77@gmail.com](mailto:jandabrowski77@gmail.com), w temacie wpisz „Usunięcie danych”. Odpowiemy w ciągu miesiąca. Informacje w katalogu nie są powiązane z Twoją piwniczką i zostają bez Twoich danych, a dane rozliczeniowe zakupów Premium przechowujemy 5 lat od końca roku podatkowego.
+
